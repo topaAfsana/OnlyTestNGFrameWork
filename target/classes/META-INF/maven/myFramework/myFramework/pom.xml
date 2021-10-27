@@ -1,0 +1,170 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>myFramework</groupId>
+  <artifactId>myFramework</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  
+ <name></name> 
+ <url></url>
+ 
+ <properties>
+ 
+ </properties>
+ 
+  
+  <dependencies>
+  
+  <!-- https://mvnrepository.com/artifact/org.testng/testng -->
+<dependency>
+    <groupId>org.testng</groupId>
+    <artifactId>testng</artifactId>
+    <version>7.4.0</version>
+    <scope>test</scope>
+</dependency>
+<!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
+<dependency>
+    <groupId>org.seleniumhq.selenium</groupId>
+    <artifactId>selenium-java</artifactId>
+    <version>3.141.59</version>
+</dependency>
+<!-- https://mvnrepository.com/artifact/org.apache.poi/poi -->
+<dependency>
+    <groupId>org.apache.poi</groupId>
+    <artifactId>poi</artifactId>
+    <version>5.0.0</version>
+</dependency>
+
+<dependency>
+    <groupId>org.apache.poi</groupId>
+    <artifactId>poi-scratchpad</artifactId>
+    <version>4.1.2</version>
+</dependency>
+
+<dependency>
+    <groupId>org.apache.poi</groupId>
+    <artifactId>poi-ooxml</artifactId>
+    <version>4.1.2</version>
+</dependency>
+ 
+<dependency>
+    <groupId>org.apache.commons</groupId>
+    <artifactId>commons-collections4</artifactId>
+    <version>4.4</version>
+</dependency>
+ 
+<dependency>
+    <groupId>com.googlecode.json-simple</groupId>
+    <artifactId>json-simple</artifactId>
+    <version>1.1.1</version>
+</dependency>
+ 
+<dependency>
+    <groupId>log4j</groupId>
+    <artifactId>log4j</artifactId>
+    <version>1.2.17</version>
+</dependency>
+
+<dependency>
+    <groupId>commons-io</groupId>
+    <artifactId>commons-io</artifactId>
+    <version>2.11.0</version>
+</dependency>
+  
+<dependency>
+    <groupId>org.apache.pdfbox</groupId>
+    <artifactId>pdfbox</artifactId>
+    <version>2.0.24</version>
+</dependency>
+  
+</dependencies>
+  
+  <build>
+  	<plugins>
+  	<!-- Below plug in is used to execute tests -->
+  		<plugin>
+   			 <groupId>org.apache.maven.plugins</groupId>
+   			 <artifactId>maven-surefire-plugin</artifactId>
+  			 <version>2.19.1</version>
+  			<configuration>
+  			  <suiteXmlFiles>
+  			  	<suiteXmlFile>testng.xml</suiteXmlFile>
+  			  </suiteXmlFiles>
+  			</configuration>
+   		 </plugin>
+   <!-- Compiler plug-in -->		 
+  	<plugin>
+  		<groupId>org.apache.maven.plugins</groupId>
+    	<artifactId>maven-compiler-plugin</artifactId>
+   		<version>3.8.1</version>
+   	  <configuration>
+   		<fork>true</fork>
+   		<executable>Java path provide here</executable>
+   		<source>1.8</source>
+   		<target>1.8</target>
+   		<compilerVersion>1.8</compilerVersion>	
+   	 </configuration>
+	</plugin>
+  
+  	</plugins>
+  </build>
+ 
+  <repositories>
+  	<repository>
+  	<id>java-net</id>
+  	<url>http://download.java.net/maven/2</url>
+  	</repository>
+  	<repository>
+  	<id>central</id>
+  	<url>http://insecure.repo1.maven.org/maven2</url>
+  	<releases>
+  	  <enabled>true</enabled>
+  	</releases>
+  </repository>
+  <!--  pluginRepositories>
+  	<pluginRepository>
+  	<id>central</id>
+  	<url>http://insecure.repo1.maven.org/maven2</url>
+  	<releases>
+  	  <enabled>true</enabled>
+  	</releases>
+  	</pluginRepository>
+  
+  </pluginRepositories -->
+  
+  
+  
+  
+  
+  
+  
+  
+  </repositories> 
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+</project>
