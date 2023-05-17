@@ -4,8 +4,8 @@
   <artifactId>myFramework</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   
- <name></name> 
- <url></url>
+ <name>OPP_UI</name> 
+ <url>http://maven.apache.org</url>
  
  <properties>
  
@@ -31,7 +31,7 @@
 <dependency>
     <groupId>org.apache.poi</groupId>
     <artifactId>poi</artifactId>
-    <version>5.0.0</version>
+    <version>5.2.2</version>
 </dependency>
 
 <dependency>
@@ -98,7 +98,7 @@
    		<version>3.8.1</version>
    	  <configuration>
    		<fork>true</fork>
-   		<executable>Java path provide here</executable>
+   		<executable>C:\Program Files\Java\jdk1.8.0_311\bin\javac.exe</executable>
    		<source>1.8</source>
    		<target>1.8</target>
    		<compilerVersion>1.8</compilerVersion>	

@@ -16,10 +16,28 @@ public class HomePage {
 	public WebElement searchBox;
 	
 	
-	public void search() {
-		searchBox.sendKeys("Bangladesh");
+	@FindBy(how = How.NAME, using = "email")
+	public WebElement emailBox;
+	
+	@FindBy(how = How.NAME, using = "pass")
+	public WebElement passBox;
+	
+	@FindBy(how = How.NAME, using = "login")
+	public WebElement logIn;
+	
+
+	
+	public void logInToFb(String userName,String password) {
+		emailBox.sendKeys(userName);
+		passBox.sendKeys(password);
+		logIn.click();
+	}
+	
+	
+	public void search(String searchText) {
+		searchBox.sendKeys(searchText);
 		try {
-			Thread.sleep(10000);
+			Thread.sleep(5000);
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

@@ -5,8 +5,7 @@
     <classes>
       <class name="gov.abc.regressionTest.myFirstTest">
         <methods>
-          <include name="closeBrowser"/>
-          <include name="launchBrowser"/>
+          <include name="setUpBrowser"/>
           <include name="myTest"/>
         </methods>
       </class> <!-- gov.abc.regressionTest.myFirstTest -->

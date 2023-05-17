@@ -4,7 +4,12 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Comparator;
+import java.util.Enumeration;
 import java.util.Properties;
+import java.util.Random;
 
 import org.apache.log4j.Logger;
 import org.apache.pdfbox.pdmodel.PDDocument;
@@ -46,6 +51,7 @@ public class CommonUtils {
 			}
 			Driver = launchChrome();
 			launchURL(Driver,URL);
+			System.out.println("Environment: " + Driver.getCurrentUrl());
 			log.info("Environment: " + Driver.getCurrentUrl());
 			
 		} catch(Exception e) {
@@ -87,6 +93,12 @@ public class CommonUtils {
 			Log(e + "-------OBSERVED EXCEPTION -----------: in method Chrome(directory, URL)");
 		}
 	}
+	/* purpose: to get property value
+	 * pre-condition: property file should exist in lib folder
+	 * input parameter: property key
+	 * output: property value.
+	 * 
+	 */
 	
 	public String getProperty(String pKey) {
 		String lvVal = "";
@@ -101,6 +113,14 @@ public class CommonUtils {
 			}else {
 				Log("\nProperty key " + pKey + "doest not exist in the file. \n");
 				Log("\nFollowing are the available keys in OR:\n");
+				
+				@SuppressWarnings("rawtypes")
+				Enumeration allKeys = prop.keys();
+				while(allKeys.hasMoreElements()) {
+					String ck = (String)allKeys.nextElement();
+					String val = prop.getProperty(ck);
+					log.info(ck + "~" + val);
+				}
 			}
 		}
 		catch(Exception e) {
@@ -143,5 +163,51 @@ public class CommonUtils {
 		Assert.assertTrue(pdfContent.contains("Text of that content"));
 	}
 	
+	public Collection<?> getSortedList(ArrayList<String> pList){
+		try {
+			pList.sort(Comparator.naturalOrder());
+		}catch(Exception e) {
+			e.printStackTrace();
+			log.info("--------- OBSERVED EXCEPTION ------------- : " + e +
+					"in methohd getSortedList()");
+		}
+		return pList;
+	}
 
+	public int getRandomNumber(int Min, int Max) {
+		int rtrnInt = 0;
+		try {
+			Random random = new Random();
+			rtrnInt = random.ints(Min, (Max+1)).findFirst().getAsInt();
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+		return rtrnInt ;
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 }

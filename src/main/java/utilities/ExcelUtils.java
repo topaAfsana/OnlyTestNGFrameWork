@@ -7,11 +7,13 @@ import java.io.FilterInputStream;
 import java.io.IOException;
 
 import org.apache.log4j.Logger;
+import org.apache.poi.ss.usermodel.*;
 import org.apache.poi.ss.usermodel.DataFormatter;
 import org.apache.poi.xssf.usermodel.XSSFCell;
 import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+import org.apache.poi.util.POILogFactory;
 
 public class ExcelUtils {
 	XSSFSheet wSheet = null;
@@ -20,34 +22,45 @@ public class ExcelUtils {
 	XSSFRow row;
 	String cellData = null;
 	String workingDir = System.getProperty("user.dir");
-	public Logger log = Logger.getLogger(ExcelUtils.class.getName());
+	//public Logger log = Logger.getLogger(ExcelUtils.class.getName());
 	
 	public Object[][] dataSource(String pFilePath, String pSheetName, int pStartRow, int pStartColumn){
 		String[][] dataArray = null;
 		try {
 			FileInputStream file = new FileInputStream(workingDir+pFilePath);
-			
+			System.out.println("our file is "+ workingDir+pFilePath);
 			// Access the required test data sheet
 			wBook = new XSSFWorkbook(file);
 			wSheet = wBook.getSheet(pSheetName);
 			
+			
+			//MY CODE
+			cell = wSheet.getRow(pStartRow).getCell(pStartColumn);
+			System.out.println("MY CELL is "+ cell);
+			
+			
+			
 			int row = 0;
 			int column = 0;
+		
 			
-			int rowCount = wSheet.getLastRowNum();
-			log.info("Total number of Rows => " + rowCount);
+			int rowCount = wSheet.getLastRowNum()+1;
+		//	log.info("Total number of Rows => " + rowCount);
 			
 			int columnCount = wSheet.getRow(0).getLastCellNum();
-			log.info("Total number of Columns => "+columnCount);
+		//	log.info("Total number of Columns => "+columnCount);
 			
 			dataArray = new String[rowCount][columnCount];
-			
+			System.out.println("My total row is "+ rowCount);
+			System.out.println("My total column  is "+ columnCount);
 			for(int rowIterate = pStartRow;rowIterate < rowCount;rowIterate++,row++) {
 				column = 0;
-				log.info("");
+				//log.info("");
+				System.out.println("");
 				for(int columnIterate = pStartColumn;columnIterate < columnCount;columnIterate++,column++) {
 					if(columnIterate > 0) {
-						log.info("");
+						//log.info("");
+						System.out.println("");
 					}
 					if(getCellData(rowIterate,columnIterate).isEmpty() == true) {
 						dataArray[row][column] = null;
@@ -55,12 +68,14 @@ public class ExcelUtils {
 					else {
 						dataArray[row][column] = getCellData(rowIterate,columnIterate);
 					}
-					log.info(dataArray[row][column]);
+					//log.info(dataArray[row][column]);
+					System.out.println(dataArray[row][column]);
 				}
 			}
 		}
 		catch(Exception e) {
-			log.info("------ OBSERVED EXCEPTION ------- : " + e +
+		//	log.info
+			System.out.println("------ OBSERVED EXCEPTION ------- : " + e +
 					" in method dataSource(String pFilePath, String pSheetName, int pStartRow, int pStartColumn)");
 		}
 		return (dataArray);
@@ -81,7 +96,8 @@ public class ExcelUtils {
 			cellData = format.formatCellValue(cell);
 			//CellData = CellgetStringCellValue()
 		} catch (Exception e) {
-			log.info("--------OBSERVED Exception ------ : " + e + 
+		//	log.info
+			System.out.println("--------OBSERVED Exception ------ : " + e + 
 					" in method getCellData(int pRowNum, int pColNum)");
 			
 		}
@@ -100,7 +116,8 @@ public class ExcelUtils {
 			row = wSheet.getRow(pRowNum);
 		}
 		catch (Exception e){
-			log.info("------- OBSERVED EXCEPTION --------- :" + e + 
+		//	log.info
+			System.out.println("------- OBSERVED EXCEPTION --------- :" + e + 
 					"in method getRowData(int pRowNum)");
 			e.printStackTrace();
 		}
@@ -134,7 +151,8 @@ public class ExcelUtils {
 			
 			
 		} catch (Exception e) {
-			log.info("------- OBSERVED -------- : " + e +
+		//	log.info
+			System.out.println("------- OBSERVED -------- : " + e +
 					"in method setCellData(String pFilePath, int pRowNum, int pColNum, String pValue)");
 			e.printStackTrace();
 		}
