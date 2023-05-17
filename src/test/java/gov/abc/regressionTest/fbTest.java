@@ -35,10 +35,10 @@ public class fbTest {
 		driver=common.launchBrowser("TEST_ENV");
 		System.out.println("Launching the Browser");
 		log.info("Launching the Browser");
-		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+//		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		homePage = PageFactory.initElements(driver, HomePage.class);
 		JSWait.setDriver(driver);
-		driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
+//		driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
 }
 	
 	@Test(dataProvider = "dataProvider")

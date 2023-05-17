@@ -3,12 +3,12 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="gov.abc.regressionTest.myFirstTest">
+      <class name="gov.abc.regressionTest.fbTest">
         <methods>
           <include name="setUpBrowser"/>
           <include name="myTest"/>
         </methods>
-      </class> <!-- gov.abc.regressionTest.myFirstTest -->
+      </class> <!-- gov.abc.regressionTest.fbTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

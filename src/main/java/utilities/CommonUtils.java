@@ -67,12 +67,15 @@ public class CommonUtils {
 		Directory = WorkingDir + Drv;
 		WebDriver Driver = null;
 		try {
-			ChromeOptions options = new ChromeOptions();
-			options.addArguments("disable-infobars");
-			System.setProperty("webdriver.chrome.driver",Directory);
-			Driver = new ChromeDriver(options);
+//			System.out.println("Try part to open chrome driver");
+//			ChromeOptions options = new ChromeOptions();
+//			options.addArguments("disable-infobars");
+//			System.setProperty("webdriver.chrome.driver",Directory);
+//			Driver = new ChromeDriver(options);
+			Driver = new ChromeDriver();
 			
 		}catch(Exception e) {
+			System.out.println("catch part to open chrome driver");
 			Log(e +"---------- OBSERVED EXCEPTION ---------- : in method Chrome(directory, URL)");
 		}
 		

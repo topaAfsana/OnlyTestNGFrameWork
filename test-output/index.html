@@ -51,7 +51,7 @@
               <ul>
                 <li>
                   <a href="#" panel-name="test-xml-Default_suite" class="navigator-link ">
-                    <span>C:\Users\MD PARVESH\AppData\Local\Temp\testng-eclipse-21819002\testng-customsuite.xml</span>
+                    <span>C:\Users\MD PARVESH\AppData\Local\Temp\testng-eclipse-655792146\testng-customsuite.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -104,7 +104,7 @@
                     <div class="method-list-content skipped suite-Default_suite">
                       <span>
                         <img src="skipped.png" width="3%"/>
-                        <a href="#" panel-name="suite-Default_suite" title="gov.abc.regressionTest.myFirstTest" class="method navigator-link" hash-for-method="myTest">myTest</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Default_suite" title="gov.abc.regressionTest.fbTest" class="method navigator-link" hash-for-method="myTest">myTest</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content skipped suite-Default_suite -->
@@ -122,7 +122,7 @@
           <div class="suite-Default_suite-class-skipped">
             <div class="main-panel-header rounded-window-top">
               <img src="skipped.png"/>
-              <span class="class-name">gov.abc.regressionTest.myFirstTest</span>
+              <span class="class-name">gov.abc.regressionTest.fbTest</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
@@ -159,8 +159,8 @@
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 Caused by: java.lang.NoClassDefFoundError: org/apache/poi/util/POILogFactory
 	at org.apache.poi.ooxml.POIXMLDocumentPart.&lt;clinit&gt;(POIXMLDocumentPart.java:56)
-	at utilities.ExcelUtils.dataSource(ExcelUtils.java:33)
-	at gov.abc.regressionTest.myFirstTest.dataProvider(myFirstTest.java:38)
+	at utilities.ExcelUtils.dataSource(ExcelUtils.java:27)
+	at gov.abc.regressionTest.fbTest.dataProvider(fbTest.java:81)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -183,7 +183,7 @@ Caused by: java.lang.ClassNotFoundException: org.apache.poi.util.POILogFactory
         </div> <!-- panel Default_suite -->
         <div panel-name="test-xml-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">C:\Users\MD PARVESH\AppData\Local\Temp\testng-eclipse-21819002\testng-customsuite.xml</span>
+            <span class="header-content">C:\Users\MD PARVESH\AppData\Local\Temp\testng-eclipse-655792146\testng-customsuite.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -192,7 +192,7 @@ Caused by: java.lang.ClassNotFoundException: org.apache.poi.util.POILogFactory
 &lt;suite name=&quot;Default suite&quot; guice-stage=&quot;DEVELOPMENT&quot;&gt;
   &lt;test thread-count=&quot;5&quot; name=&quot;Default test&quot; verbose=&quot;2&quot;&gt;
     &lt;classes&gt;
-      &lt;class name=&quot;gov.abc.regressionTest.myFirstTest&quot;/&gt;
+      &lt;class name=&quot;gov.abc.regressionTest.fbTest&quot;/&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- Default test --&gt;
 &lt;/suite&gt; &lt;!-- Default suite --&gt;
@@ -235,7 +235,7 @@ data.addColumn('number', 'Time (ms)');
 data.addRows(1);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'myTest')
-data.setCell(0, 2, 'gov.abc.regressionTest.myFirstTest')
+data.setCell(0, 2, 'gov.abc.regressionTest.fbTest')
 data.setCell(0, 3, 0);
 window.suiteTableData['Default_suite']= { tableData: data, tableDiv: 'times-div-Default_suite'}
 return data;
@@ -267,10 +267,8 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-              <div class="chronological-class-name">gov.abc.regressionTest.myFirstTest</div> <!-- chronological-class-name -->
+              <div class="chronological-class-name">gov.abc.regressionTest.fbTest</div> <!-- chronological-class-name -->
               <div class="configuration-test before">
-                <img src="failed.png">
-                </img>
                 <span class="method-name">setUpBrowser</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-test before -->
